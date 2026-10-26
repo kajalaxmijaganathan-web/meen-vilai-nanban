@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>மீன் விலை நண்பன்</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+</head>
+
+<body>
+
+    <div class="app">
+
+        <!-- HEADER -->
+        <header class="header">
+            <div class="logo-area">
+                <div class="logo">🐟</div>
+                <div>
+                    <h1>மீன் விலை நண்பன்</h1>
+                    <p>சரியான இடத்தில் விற்று அதிகம் பெறுங்கள்</p>
+                </div>
+            </div>
+
+            <div class="location-status">
+                <span>📍</span>
+                <span id="locationText">இருப்பிடம் பெறப்படவில்லை</span>
+            </div>
+        </header>
+
+
+        <!-- PROGRESS -->
+        <div class="progress-container">
+            <div class="progress-step active">
+                <span>1</span>
+                <small>மீன்</small>
+            </div>
+
+            <div class="progress-line"></div>
+
+            <div class="progress-step">
+                <span>2</span>
+                <small>பிடிப்பு</small>
+            </div>
+
+            <div class="progress-line"></div>
+
+            <div class="progress-step">
+                <span>3</span>
+                <small>பரிந்துரை</small>
+            </div>
+        </div>
+
+
+        <!-- STEP 1 -->
+        <section id="step1" class="screen active-screen">
+
+            <div class="welcome-card">
+                <span class="welcome-icon">👋</span>
+
+                <div>
+                    <p class="small-label">வணக்கம்!</p>
+                    <h2>இன்று என்ன மீன் பிடித்தீர்கள்?</h2>
+                    <p>
+                        உங்கள் மீன் மற்றும் அளவைத் தேர்வு செய்யுங்கள்.
+                        அருகிலுள்ள சிறந்த விலையை நாங்கள் கண்டுபிடிப்போம்.
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="section-title">
+                <h3>🐟 மீன் வகையைத் தேர்வு செய்யுங்கள்</h3>
+            </div>
+
+            <div class="fish-grid">
+
+                <button class="fish-card" data-fish="வஞ்சிரம்" data-price="480">
+                    <span class="fish-emoji">🐟</span>
+                    <strong>வஞ்சிரம்</strong>
+                    <small>வஞ்சிரம் மீன்</small>
+                </button>
+
+                <button class="fish-card" data-fish="சூரை" data-price="260">
+                    <span class="fish-emoji">🐠</span>
+                    <strong>சூரை</strong>
+                    <small>சூரை மீன்</small>
+                </button>
+
+                <button class="fish-card" data-fish="சங்கரா" data-price="350">
+                    <span class="fish-emoji">🐟</span>
+                    <strong>சங்கரா</strong>
+                    <small>சங்கரா மீன்</small>
+                </button>
+
+                <button class="fish-card" data-fish="இறால்" data-price="550">
+                    <span class="fish-emoji">🦐</span>
+                    <strong>இறால்</strong>
+                    <small>புதிய இறால்</small>
+                </button>
+
+                <button class="fish-card" data-fish="நண்டு" data-price="420">
+                    <span class="fish-emoji">🦀</span>
+                    <strong>நண்டு</strong>
+                    <small>கடல் நண்டு</small>
+                </button>
+
+                <button class="fish-card" data-fish="மத்தி" data-price="180">
+                    <span class="fish-emoji">🐟</span>
+                    <strong>மத்தி</strong>
+                    <small>மத்தி மீன்</small>
+                </button>
+
+            </div>
+
+
+            <button id="nextToQuantity" class="primary-button" disabled>
+                தொடர்க <span>→</span>
+            </button>
+
+        </section>
+
+
+        <!-- STEP 2 -->
+        <section id="step2" class="screen">
+
+            <button class="back-button" onclick="goToStep(1)">
+                ← பின்செல்ல
+            </button>
+
+            <div class="page-heading">
+                <span>⚖️</span>
+                <div>
+                    <h2>உங்கள் பிடிப்பை உள்ளிடுங்கள்</h2>
+                    <p>இன்றைய பிடிப்பு அளவை உள்ளிடவும்</p>
+                </div>
+            </div>
+
+
+            <div class="selected-fish-card">
+
+                <div class="selected-fish-icon" id="selectedFishIcon">
+                    🐟
+                </div>
+
+                <div>
+                    <span>தேர்ந்தெடுக்கப்பட்டது</span>
+                    <h3 id="selectedFishName">வஞ்சிரம்</h3>
+                </div>
+
+                <button onclick="goToStep(1)">மாற்று</button>
+
+            </div>
+
+
+            <div class="input-card">
+
+                <label for="quantity">மீன் அளவு</label>
+
+                <div class="quantity-input">
+                    <input
+                        type="number"
+                        id="quantity"
+                        min="1"
+                        value="50"
+                        placeholder="உதாரணம்: 50"
+                    >
+
+                    <span>கிலோ</span>
+                </div>
+
+                <p class="input-hint">
+                    💡 உங்கள் பிடிப்பின் மொத்த எடையை உள்ளிடவும்.
+                </p>
+
+            </div>
+
+
+            <div class="location-card">
+
+                <div class="location-icon">📍</div>
+
+                <div class="location-content">
+                    <h3>உங்கள் இருப்பிடம்</h3>
+                    <p id="locationMessage">
+                        அருகிலுள்ள துறைமுகங்களை கண்டுபிடிக்க உங்கள் இருப்பிடம் தேவை.
+                    </p>
+                </div>
+
+                <button id="locationButton" onclick="getLocation()">
+                    இருப்பிடத்தைப் பெறு
+                </button>
+
+            </div>
+
+
+            <div class="demo-location">
+                <span>🎯 Demo:</span>
+                <button onclick="useDemoLocation()">
+                    கடலூர் இருப்பிடத்தைப் பயன்படுத்தவும்
+                </button>
+            </div>
+
+
+            <button id="findHarbours" class="primary-button">
+                சிறந்த துறைமுகத்தைக் கண்டுபிடி →
+            </button>
+
+        </section>
+
+
+        <!-- STEP 3 -->
+        <section id="step3" class="screen">
+
+            <button class="back-button" onclick="goToStep(2)">
+                ← மாற்றங்களைச் செய்
+            </button>
+
+            <div class="result-heading">
+
+                <div class="success-icon">✓</div>
+
+                <div>
+                    <span>உங்கள் பிடிப்பு</span>
+                    <h2 id="resultFishName">வஞ்சிரம் — 50 kg</h2>
+                </div>
+
+            </div>
+
+
+            <!-- AI RECOMMENDATION -->
+            <div class="ai-card">
+
+                <div class="ai-header">
+                    <div class="ai-icon">🤖</div>
+
+                    <div>
+                        <span>AI பரிந்துரை</span>
+                        <h2>உங்களுக்கு சிறந்த தேர்வு</h2>
+                    </div>
+
+                    <span class="ai-badge">AI</span>
+                </div>
+
+
+                <div class="best-harbour">
+
+                    <div class="trophy">🏆</div>
+
+                    <div class="best-info">
+                        <span>செல்ல பரிந்துரை</span>
+                        <h2 id="bestHarbourName">கடலூர் துறைமுகம்</h2>
+                        <p id="bestReason">
+                            அதிக விலை மற்றும் குறைந்த பயணச் செலவு.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="earning-box">
+
+                    <div>
+                        <span>விலை / கிலோ</span>
+                        <strong id="bestPrice">₹480</strong>
+                    </div>
+
+                    <div>
+                        <span>மொத்த வருமானம்</span>
+                        <strong id="totalIncome">₹24,000</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- HARBOUR COMPARISON -->
+            <div class="section-title result-title">
+                <h3>📊 துறைமுக விலை ஒப்பீடு</h3>
+                <p>இன்றைய மாதிரி விலைத் தகவல்</p>
+            </div>
+
+            <div id="harbourList" class="harbour-list"></div>
+
+
+            <!-- AI EXPLANATION -->
+            <div class="explanation-card">
+
+                <div class="explanation-title">
+                    💡 AI ஏன் இதை பரிந்துரைத்தது?
+                </div>
+
+                <p id="aiExplanation">
+                    விலை, தூரம் மற்றும் பயணச் செலவை ஒப்பிட்டு சிறந்த தேர்வு கணக்கிடப்பட்டது.
+                </p>
+
+            </div>
+
+
+            <div class="action-buttons">
+
+                <button class="primary-button" onclick="openMap()">
+                    🧭 வழியைக் காட்டு
+                </button>
+
+                <button class="secondary-button" onclick="speakRecommendation()">
+                    🔊 தமிழில் கேளுங்கள்
+                </button>
+
+            </div>
+
+
+            <button class="restart-button" onclick="restartApp()">
+                ↻ மீண்டும் தொடங்குங்கள்
+            </button>
+
+        </section>
+
+
+        <!-- FOOTER -->
+        <footer>
+            <p>🐟 மீன் விலை நண்பன்</p>
+            <span>மீனவர்களுக்கு சரியான விலை • சரியான முடிவு</span>
+        </footer>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>

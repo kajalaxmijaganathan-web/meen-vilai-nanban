@@ -1,0 +1,1020 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #00796b;
+    --primary-dark: #005b50;
+    --primary-light: #e0f2ef;
+
+    --blue: #087ea4;
+    --blue-light: #e8f7fb;
+
+    --green: #16844c;
+    --green-light: #e9f8ef;
+
+    --text: #17313b;
+    --muted: #6b7c83;
+
+    --background: #f5fafb;
+    --white: #ffffff;
+
+    --border: #dce8eb;
+    --shadow: 0 8px 25px rgba(25, 70, 80, 0.08);
+}
+
+body {
+    font-family: "Noto Sans Tamil", sans-serif;
+    background:
+        radial-gradient(circle at top right, #e3f5f5, transparent 30%),
+        var(--background);
+
+    color: var(--text);
+    min-height: 100vh;
+}
+
+
+/* APP */
+
+.app {
+    width: 100%;
+    max-width: 850px;
+    margin: auto;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+
+/* HEADER */
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+
+    background: rgba(255, 255, 255, 0.92);
+    border: 1px solid var(--border);
+    border-radius: 22px;
+
+    padding: 18px 20px;
+    box-shadow: var(--shadow);
+
+    margin-bottom: 18px;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--primary-light);
+    border-radius: 15px;
+
+    font-size: 28px;
+}
+
+.logo-area h1 {
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.logo-area p {
+    color: var(--muted);
+    font-size: 12px;
+    margin-top: 2px;
+}
+
+.location-status {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    padding: 8px 12px;
+
+    border-radius: 20px;
+
+    background: var(--blue-light);
+    color: var(--blue);
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+
+/* PROGRESS */
+
+.progress-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 25px 0;
+}
+
+.progress-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    color: #9aabb0;
+
+    min-width: 65px;
+}
+
+.progress-step span {
+    width: 32px;
+    height: 32px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #e5edef;
+
+    font-weight: 700;
+}
+
+.progress-step small {
+    margin-top: 5px;
+    font-size: 11px;
+}
+
+.progress-step.active span {
+    background: var(--primary);
+    color: white;
+}
+
+.progress-step.active {
+    color: var(--primary);
+    font-weight: 700;
+}
+
+.progress-line {
+    width: 80px;
+    height: 2px;
+    background: #dce5e8;
+}
+
+
+/* SCREENS */
+
+.screen {
+    display: none;
+}
+
+.active-screen {
+    display: block;
+}
+
+
+/* WELCOME */
+
+.welcome-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+
+    background: linear-gradient(
+        135deg,
+        #00796b,
+        #0796a1
+    );
+
+    color: white;
+
+    padding: 25px;
+
+    border-radius: 24px;
+
+    box-shadow: 0 15px 35px rgba(0, 121, 107, 0.18);
+
+    margin-bottom: 28px;
+}
+
+.welcome-icon {
+    font-size: 35px;
+}
+
+.small-label {
+    font-size: 13px;
+    opacity: 0.8;
+}
+
+.welcome-card h2 {
+    font-size: 23px;
+    margin: 3px 0 8px;
+}
+
+.welcome-card p:last-child {
+    font-size: 13px;
+    line-height: 1.7;
+    opacity: 0.92;
+}
+
+
+/* SECTION TITLE */
+
+.section-title {
+    margin-bottom: 15px;
+}
+
+.section-title h3 {
+    font-size: 16px;
+}
+
+.section-title p {
+    color: var(--muted);
+    font-size: 12px;
+    margin-top: 3px;
+}
+
+
+/* FISH GRID */
+
+.fish-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 13px;
+}
+
+.fish-card {
+    border: 2px solid var(--border);
+    background: white;
+
+    border-radius: 18px;
+
+    padding: 18px 10px;
+
+    cursor: pointer;
+
+    text-align: center;
+
+    transition: 0.2s ease;
+
+    font-family: inherit;
+
+    color: var(--text);
+}
+
+.fish-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--primary);
+}
+
+.fish-card.selected {
+    border-color: var(--primary);
+    background: var(--primary-light);
+    box-shadow: 0 8px 20px rgba(0, 121, 107, 0.12);
+}
+
+.fish-emoji {
+    display: block;
+    font-size: 35px;
+    margin-bottom: 7px;
+}
+
+.fish-card strong {
+    display: block;
+    font-size: 14px;
+}
+
+.fish-card small {
+    color: var(--muted);
+    font-size: 10px;
+}
+
+
+/* BUTTONS */
+
+.primary-button {
+    width: 100%;
+
+    border: none;
+
+    background: linear-gradient(
+        135deg,
+        var(--primary),
+        #008c83
+    );
+
+    color: white;
+
+    padding: 16px;
+
+    border-radius: 15px;
+
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    margin-top: 22px;
+
+    box-shadow: 0 10px 22px rgba(0, 121, 107, 0.18);
+
+    transition: 0.2s;
+}
+
+.primary-button:hover {
+    transform: translateY(-2px);
+}
+
+.primary-button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.back-button {
+    border: none;
+    background: transparent;
+
+    color: var(--primary);
+
+    font-family: inherit;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    margin-bottom: 18px;
+}
+
+
+/* PAGE HEADING */
+
+.page-heading {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    margin-bottom: 20px;
+}
+
+.page-heading > span {
+    font-size: 35px;
+}
+
+.page-heading h2 {
+    font-size: 21px;
+}
+
+.page-heading p {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+
+/* SELECTED FISH */
+
+.selected-fish-card {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    background: white;
+
+    padding: 15px;
+
+    border-radius: 18px;
+
+    border: 1px solid var(--border);
+
+    margin-bottom: 15px;
+}
+
+.selected-fish-icon {
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--primary-light);
+
+    border-radius: 15px;
+
+    font-size: 28px;
+}
+
+.selected-fish-card span {
+    font-size: 10px;
+    color: var(--muted);
+}
+
+.selected-fish-card h3 {
+    font-size: 17px;
+}
+
+.selected-fish-card button {
+    margin-left: auto;
+
+    border: none;
+
+    background: var(--primary-light);
+    color: var(--primary);
+
+    padding: 8px 12px;
+
+    border-radius: 10px;
+
+    font-family: inherit;
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+
+/* INPUT */
+
+.input-card {
+    background: white;
+
+    border: 1px solid var(--border);
+
+    border-radius: 18px;
+
+    padding: 20px;
+
+    margin-bottom: 15px;
+}
+
+.input-card label {
+    display: block;
+
+    font-weight: 700;
+    font-size: 14px;
+
+    margin-bottom: 10px;
+}
+
+.quantity-input {
+    display: flex;
+    align-items: center;
+
+    border: 2px solid var(--border);
+
+    border-radius: 14px;
+
+    overflow: hidden;
+
+    background: #fbfdfd;
+}
+
+.quantity-input:focus-within {
+    border-color: var(--primary);
+}
+
+.quantity-input input {
+    width: 100%;
+
+    border: none;
+    outline: none;
+
+    padding: 15px;
+
+    background: transparent;
+
+    font-family: inherit;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.quantity-input span {
+    padding: 0 15px;
+
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.input-hint {
+    color: var(--muted);
+    font-size: 11px;
+    margin-top: 10px;
+}
+
+
+/* LOCATION */
+
+.location-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    background: var(--blue-light);
+
+    border: 1px solid #cbe9f0;
+
+    padding: 16px;
+
+    border-radius: 18px;
+}
+
+.location-icon {
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: white;
+
+    border-radius: 13px;
+
+    font-size: 22px;
+}
+
+.location-content {
+    flex: 1;
+}
+
+.location-content h3 {
+    font-size: 14px;
+}
+
+.location-content p {
+    color: var(--muted);
+    font-size: 10px;
+    line-height: 1.5;
+}
+
+.location-card button {
+    border: none;
+
+    background: var(--blue);
+
+    color: white;
+
+    padding: 10px 13px;
+
+    border-radius: 10px;
+
+    font-family: inherit;
+    font-size: 11px;
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+
+/* DEMO */
+
+.demo-location {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+
+    margin-top: 12px;
+
+    font-size: 10px;
+    color: var(--muted);
+}
+
+.demo-location button {
+    border: none;
+    background: transparent;
+
+    color: var(--primary);
+
+    font-family: inherit;
+    font-size: 10px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    text-decoration: underline;
+}
+
+
+/* RESULT */
+
+.result-heading {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    margin-bottom: 18px;
+}
+
+.success-icon {
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: var(--green-light);
+    color: var(--green);
+
+    font-size: 23px;
+    font-weight: 800;
+}
+
+.result-heading span {
+    font-size: 11px;
+    color: var(--muted);
+}
+
+.result-heading h2 {
+    font-size: 19px;
+}
+
+
+/* AI CARD */
+
+.ai-card {
+    background: linear-gradient(
+        135deg,
+        #063f43,
+        #006f6a
+    );
+
+    color: white;
+
+    border-radius: 24px;
+
+    padding: 20px;
+
+    box-shadow: 0 15px 35px rgba(0, 70, 70, 0.18);
+
+    margin-bottom: 25px;
+}
+
+.ai-header {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+}
+
+.ai-icon {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(255,255,255,0.15);
+
+    border-radius: 13px;
+
+    font-size: 22px;
+}
+
+.ai-header span:not(.ai-badge) {
+    display: block;
+
+    font-size: 10px;
+
+    opacity: 0.7;
+}
+
+.ai-header h2 {
+    font-size: 15px;
+}
+
+.ai-badge {
+    margin-left: auto;
+
+    padding: 5px 9px;
+
+    background: #d7fff1;
+
+    color: #006b57;
+
+    border-radius: 8px;
+
+    font-size: 10px;
+    font-weight: 800;
+}
+
+
+/* BEST HARBOUR */
+
+.best-harbour {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    background: rgba(255,255,255,0.1);
+
+    border-radius: 17px;
+
+    padding: 17px;
+
+    margin-top: 18px;
+}
+
+.trophy {
+    font-size: 30px;
+}
+
+.best-info span {
+    font-size: 10px;
+    opacity: 0.7;
+}
+
+.best-info h2 {
+    font-size: 20px;
+    margin: 2px 0;
+}
+
+.best-info p {
+    font-size: 10px;
+    opacity: 0.8;
+}
+
+
+/* EARNINGS */
+
+.earning-box {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 10px;
+
+    margin-top: 12px;
+}
+
+.earning-box div {
+    background: white;
+
+    color: var(--text);
+
+    padding: 13px;
+
+    border-radius: 13px;
+}
+
+.earning-box span {
+    display: block;
+
+    color: var(--muted);
+
+    font-size: 9px;
+}
+
+.earning-box strong {
+    display: block;
+
+    font-size: 18px;
+
+    margin-top: 3px;
+}
+
+
+/* HARBOUR LIST */
+
+.result-title {
+    margin-bottom: 10px;
+}
+
+.harbour-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.harbour-card {
+    display: flex;
+    align-items: center;
+
+    background: white;
+
+    border: 1px solid var(--border);
+
+    border-radius: 16px;
+
+    padding: 14px;
+
+    gap: 12px;
+}
+
+.harbour-card.best {
+    border: 2px solid #2aa873;
+    background: #f2fbf6;
+}
+
+.harbour-rank {
+    width: 35px;
+    height: 35px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 11px;
+
+    background: #edf3f4;
+
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.harbour-info {
+    flex: 1;
+}
+
+.harbour-info h4 {
+    font-size: 14px;
+}
+
+.harbour-info p {
+    color: var(--muted);
+
+    font-size: 9px;
+
+    margin-top: 3px;
+}
+
+.harbour-price {
+    text-align: right;
+}
+
+.harbour-price strong {
+    display: block;
+
+    color: var(--primary);
+
+    font-size: 16px;
+}
+
+.harbour-price span {
+    color: var(--muted);
+    font-size: 9px;
+}
+
+
+/* EXPLANATION */
+
+.explanation-card {
+    background: #fff8e6;
+
+    border: 1px solid #f4df9d;
+
+    border-radius: 17px;
+
+    padding: 15px;
+
+    margin-top: 15px;
+}
+
+.explanation-title {
+    color: #805e00;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    margin-bottom: 5px;
+}
+
+.explanation-card p {
+    color: #786a45;
+
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+
+/* ACTION */
+
+.secondary-button {
+    width: 100%;
+
+    border: 2px solid var(--primary);
+
+    background: white;
+
+    color: var(--primary);
+
+    padding: 14px;
+
+    border-radius: 14px;
+
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    margin-top: 10px;
+}
+
+.restart-button {
+    display: block;
+
+    margin: 18px auto;
+
+    border: none;
+    background: transparent;
+
+    color: var(--muted);
+
+    font-family: inherit;
+    font-size: 11px;
+
+    cursor: pointer;
+}
+
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+
+    padding: 30px 0 10px;
+
+    color: var(--muted);
+
+    font-size: 10px;
+}
+
+footer p {
+    font-size: 12px;
+    font-weight: 700;
+
+    color: var(--primary);
+
+    margin-bottom: 3px;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 600px) {
+
+    .app {
+        padding: 12px;
+    }
+
+    .header {
+        padding: 14px;
+        border-radius: 18px;
+    }
+
+    .logo-area h1 {
+        font-size: 16px;
+    }
+
+    .logo-area p {
+        font-size: 9px;
+    }
+
+    .logo {
+        width: 42px;
+        height: 42px;
+        font-size: 23px;
+    }
+
+    .location-status {
+        display: none;
+    }
+
+    .fish-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .welcome-card {
+        padding: 20px;
+    }
+
+    .welcome-card h2 {
+        font-size: 19px;
+    }
+
+    .progress-line {
+        width: 45px;
+    }
+
+    .location-card {
+        align-items: flex-start;
+    }
+
+    .location-card button {
+        white-space: nowrap;
+    }
+
+    .best-info h2 {
+        font-size: 17px;
+    }
+}
